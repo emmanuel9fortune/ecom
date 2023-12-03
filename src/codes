@@ -1,0 +1,25 @@
+// converting array of objects to an array
+const arrOfObj = [
+    {id: 1, name: 'Alice'},
+    {id: 2, name: 'Bob'},
+  ];
+  
+  const arr = arrOfObj.map(object => object.name);
+  console.log(arr);
+
+
+
+
+//   sorting numbers and their positions
+
+// var arr = [3, 6, 2, 56, 32, 5, 89, 32];
+// var largest = 0;
+
+  // for (var i = 0; i < arr.length; i++) {
+  //   if (arr[i] > largest ) {
+  //     largest = arr[i];
+  //   }
+  // }
+  // console.log(arr.indexOf(largest));
+  // var num = arr.sort(function(a, b){return b - a})
+  // console.log(num.indexOf(largest) + 1);

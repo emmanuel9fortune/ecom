@@ -1,0 +1,27 @@
+[
+    {
+        "name": "text",
+        "id": 122,
+        "price" : 200
+    },
+    {
+        "name": "home",
+        "id": 123,
+        "price" : 230
+    },
+    {
+        "name": "town",
+        "id": 124,
+        "price" : 1200
+    },
+    {
+        "name": "money",
+        "id": 125,
+        "price": 200000000
+    },
+    {
+        "name": "book",
+        "id": 126,
+        "price": 50
+    }
+]

@@ -1,0 +1,41 @@
+import * as React from 'react';
+import { Map } from 'pigeon-maps';
+
+const TILE_SIZE = 256;
+const HEIGHT_RATIO = 0.75;
+
+function mapboxProvider(x, y, z, dpr) {
+  return `https://api.mapbox.com/styles/v1/${
+    process.env.GATSBY_MAPBOX_URL
+  }/tiles/512/${z}/${x}/${y}${dpr >= 2 ? '@2x' : ''}?access_token=${
+    process.env.GATSBY_MAPBOX_ACCESS_TOKEN
+  }`;
+}
+
+const EventsMap = () => {
+  // With Gatsby or another SSR-based framework, there would be also a `window` check,
+  // but we skip it for simplification
+  const screenWidth = window.innerWidth;
+  const zoomValue = Math.log2(screenWidth / TILE_SIZE);
+
+  return (
+    <Map
+      provider={mapboxProvider}
+      dprs={[1, 2]}
+      height={screenWidth * HEIGHT_RATIO}
+      width={screenWidth}
+      defaultCenter={[0, 0]}
+      center={[0, 0]}
+      defaultZoom={zoomValue}
+      zoom={zoomValue}
+      animate={false}
+      attribution={false}
+      mouseEvents={false}
+      touchEvents={false}
+      metaWheelZoomWarning={null}
+      twoFingerDragWarning={null}
+    />
+  );
+}
+
+export default EventsMap
